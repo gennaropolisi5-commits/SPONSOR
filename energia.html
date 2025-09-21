@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Energia - Red Bull</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+<h1>Energia Red Bull</h1>
+<div class="menu-toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+<nav>
+<ul class="nav-list">
+<li><a href="index.html">Home</a></li>
+<li><a href="vantaggi.html">Vantaggi</a></li>
+<li><a href="svantaggi.html">Svantaggi</a></li>
+<li><a href="elementi.html">Ingredienti</a></li>
+<li><a href="energia.html">Energia</a></li>
+<li><a href="info.html">Info</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="fade-slide-left">
+<h2>Energia immediata</h2>
+<p>Red Bull fornisce energia rapida grazie a caffeina, taurina e zuccheri, ideale per attività brevi ma intense.</p>
+</section>
+
+<section class="fade-slide-right">
+<h2>Grafico energetico</h2>
+<canvas id="energyChart" width="400" height="200"></canvas>
+</section>
+
+<section class="zoom-in">
+<h2>Come agisce nel corpo</h2>
+<p>Stimola sistema nervoso e metabolismo. L’effetto dura 2-4 ore, a seconda del metabolismo individuale.</p>
+<div class="image-container">
+<img src="https://cdn.pixabay.com/photo/2016/03/27/22/16/energy-drink-1288956_1280.jpg" alt="Bevanda energetica">
+<img src="https://cdn.pixabay.com/photo/2017/08/06/22/28/red-bull-2590812_1280.jpg" alt="Evento Red Bull">
+</div>
+</section>
+
+</main>
+
+<footer>
+<p><b>Sponsor by Gennaro</b></p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+const ctx = document.getElementById('energyChart').getContext('2d');
+new Chart(ctx, {
+type: 'bar',
+data: {
+labels: ['Caffeina','Taurina','Zuccheri','Vitamine B'],
+datasets: [{
+label: 'Aumento energia (%)',
+data: [30,20,25,15],
+backgroundColor: ['rgba(255,0,0,0.7)','rgba(255,85,85,0.7)','rgba(255,150,150,0.7)','rgba(255,200,200,0.7)'],
+borderColor: ['rgba(255,0,0,1)','rgba(255,85,85,1)','rgba(255,150,150,1)','rgba(255,200,200,1)'],
+borderWidth: 2
+}]
+},
+options: {responsive:true, plugins:{legend:{display:false}}, scales:{y:{beginAtZero:true,max:50}}}
+});
+</script>
+
+</body>
+</html>

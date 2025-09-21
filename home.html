@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Red Bull</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+<h1>Benvenuto nel mondo Red Bull</h1>
+
+<nav>
+<div class="menu-toggle" id="mobile-menu">
+<span class="bar"></span>
+<span class="bar"></span>
+<span class="bar"></span>
+</div>
+<ul class="nav-list">
+<li><a href="home.html">Home</a></li>
+<li><a href="vantaggi.html">Vantaggi</a></li>
+<li><a href="svantaggi.html">Svantaggi</a></li>
+<li><a href="elementi.html">Elementi</a></li>
+<li><a href="energia.html">Energia</a></li>
+<li><a href="info.html">Info</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+<section class="fade-slide-left">
+<h2>Scopri Red Bull</h2>
+<p>Red Bull non è solo una bevanda energetica. Fornisce energia temporanea, concentrazione e adrenalina grazie a caffeina, taurina e vitamine del gruppo B.</p>
+</section>
+
+<section class="zoom-in">
+<h2>Eventi e adrenalina</h2>
+<p>Red Bull è famosa per i suoi eventi estremi: Air Race, Formula 1, Cliff Diving e motocross. Simbolo di adrenalina e performance.</p>
+<div class="image-container">
+<img src="https://wallpapercave.com/wp/wp2072690.jpg" alt="Red Bull Racing Car">
+<img src="https://wallpaperaccess.com/full/1455563.jpg" alt="Red Bull Air Race">
+<img src="https://image.adsoftheworld.com/wbw6hj7kbxiicl1iuvng9s1rqp1d" alt="Red Bull Cliff Diving">
+</div>
+</section>
+
+<section class="fade-slide-right">
+<div class="image-container" style="margin-top:40px;">
+<a href="vantaggi.html" class="btn-redbull">Vantaggi</a>
+<a href="svantaggi.html" class="btn-redbull">Svantaggi</a>
+<a href="elementi.html" class="btn-redbull">Elementi</a>
+</div>
+</div>
+</section>
+
+<!-- CAROSELLO 3D LATTINE -->
+<section class="fade-scroll">
+<h2>Lattine in 3D</h2>
+<p>Guarda le lattine Red Bull ruotare in un carosello 3D per un effetto dinamico e realistico.</p>
+<div class="carousel-3d">
+    <div class="lattina"><img src="https://www.redbull.com/images/cms/content/18112018141945/red-bull-can.png" alt="Lattina Red Bull"></div>
+    <div class="lattina"><img src="https://www.redbull.com/images/cms/content/18112018141945/red-bull-can.png" alt="Lattina Red Bull"></div>
+    <div class="lattina"><img src="https://www.redbull.com/images/cms/content/18112018141945/red-bull-can.png" alt="Lattina Red Bull"></div>
+    <div class="lattina"><img src="https://www.redbull.com/images/cms/content/18112018141945/red-bull-can.png" alt="Lattina Red Bull"></div>
+    <div class="lattina"><img src="https://www.redbull.com/images/cms/content/18112018141945/red-bull-can.png" alt="Lattina Red Bull"></div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<p><b>Sponsor by Gennaro</b></p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+// Carosello 3D
+const carousel = document.querySelector('.carousel-3d');
+const items = document.querySelectorAll('.carousel-3d .lattina');
+const total = items.length;
+let angle = 360 / total;
+let current = 0;
+
+function rotateCarousel() {
+    current++;
+    carousel.style.transform = `translateZ(-400px) rotateY(${current * angle}deg)`;
+}
+
+setInterval(rotateCarousel, 2000);
+</script>
+
+</body>
+</html>
